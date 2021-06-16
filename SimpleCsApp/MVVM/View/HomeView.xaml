@@ -11,8 +11,108 @@
                    FontSize="28"
                    Foreground="White"
                    Margin="0,0,0,20"></TextBlock>
+        <TextBlock Text="put your 24h type time below"
+                   Foreground="White"
+                   FontSize="22"
+                   Margin="5,5,5,5"></TextBlock>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="Field0" Grid.Column="0"></TextBox>
+            <TextBlock x:Name="Field1" Foreground="White" Grid.Column="1" Text="  h"></TextBlock>
+            <TextBox x:Name="Field2" Grid.Column="2"></TextBox>
+            <TextBlock x:Name="Field3" Foreground="White" Grid.Column="3" Text="  min"></TextBlock>
+            <TextBox x:Name="Field4" Grid.Column="4"></TextBox>
+            <TextBlock x:Name="Field5" Foreground="White" Grid.Column="5" Text="  sec"></TextBlock>
+            <TextBox x:Name="Field6" Grid.Column="6"></TextBox>
+            <TextBlock x:Name="Field7" Foreground="White" Grid.Column="7" Text="  h"></TextBlock>
+            <TextBox x:Name="Field8" Grid.Column="8"></TextBox>
+            <TextBlock x:Name="Field9" Foreground="White" Grid.Column="9" Text="  min"></TextBlock>
+            <TextBox x:Name="Field10" Grid.Column="10"></TextBox>
+            <TextBlock x:Name="Field11" Foreground="White" Grid.Column="11" Text="  sec"></TextBlock>
+            <TextBlock x:Name="Field12" Foreground="White" Grid.Column="12"></TextBlock>
+        </Grid>
+        <Button x:Name="ButtonClock" Click="ButtonClock_Click" Content="click to apply changes"></Button>
         <StackPanel Orientation="Horizontal">
-            <Border></Border>
+            <Grid>
+                <Border BorderThickness="10"
+                        BorderBrush="Wheat"
+                        CornerRadius="300"
+                        Width="320"
+                        Height="320"
+                        Margin="20">
+                    <Grid Height="300"
+                          Width="300"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center">
+                        <Border CornerRadius="350">
+                                <Image Source="../../Images/clock.png" Visibility="Visible"></Image>
+                            </Border>
+                            <Border x:Name="hour"
+                                    CornerRadius="0,15,15,0"
+                                    Height="10"
+                                    Width="90"
+                                    BorderThickness="3"
+                                    BorderBrush="#FF66B01C"
+                                    Margin="80,0,0,0">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                        <SkewTransform/>
+                                            <RotateTransform x:Name="hourButton" Angle="-90"/>
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                        </Border>
+                        <Border x:Name="minute"
+                                CornerRadius="0,15,15,0"
+                                Height="5"
+                                Width="120"
+                                Margin="115,0,0,0"
+                                BorderThickness="3"
+                                BorderBrush="red">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform x:Name="minuteButton" Angle="-90"/>
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                        </Border>
+                        <Border x:Name="second"
+                                CornerRadius="0,15,15,0"
+                                Height="3"
+                                Width="150"
+                                Margin="147.5,0,0,0"
+                                Background="blue">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform x:Name="secondButton" Angle="-90"/>
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                        </Border>
+                        <Ellipse Fill="Black"
+                                 Width="20"
+                                 Height="20"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"></Ellipse>
+                    </Grid>
+                </Border>
+            </Grid>
         </StackPanel>
     </StackPanel>
 </UserControl>

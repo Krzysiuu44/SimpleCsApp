@@ -1,4 +1,7 @@
-﻿namespace ClassLibrary2
+﻿using System.Collections.Generic;
+using System.Data;
+
+namespace ClassLibrary2
 {
     public class Class1
     {
@@ -60,6 +63,28 @@
         {
             double a = System.Convert.ToDouble(x);
             return a * 0.621;
+        }
+
+        public static string CheckAm(int a)
+        {
+            if (a>12)
+            {
+                return "pm";
+            }
+            else
+            {
+                return "am";
+            }
+        }
+
+        public static int CheckTime(int a)
+        {
+            if (a>12)
+            {
+                a = a - 12;
+            }
+
+            return a;
         }
     }
 }
